@@ -29,14 +29,24 @@ export default function ProductsContainer() {
           setProducts(newData)
     }
     
+    const countTotal = products.reduce((acc,{stock}) => acc+stock,0);
+    const totalPrice = products.reduce((acc,{price,stock}) => acc+price*stock,0)
+    const totalPriceDisc = products.reduce((acc, {price,stock,discountPercentage}) => acc + discount(discountPercentage,price)*stock,0)
      
   return (
-    <div className={s.container}>
-        {
+    <div>
+        <div  className={s.container}> 
+            {
             products.map((product) => <Product key = {product.id} {...product}
             deleteProduct={deleteProduct}
             discount={discount}/>)
-        }
+            }
+        </div>
+        <div className={s.summury}>
+            <p>Products count = {countTotal}</p>
+            <p>Total price = {totalPrice}$</p>
+            <p>Total price with discount = {totalPriceDisc.toFixed(2)}$</p>
+        </div>
     </div>
   )
 }
