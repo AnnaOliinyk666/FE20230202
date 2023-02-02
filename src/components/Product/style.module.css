@@ -1,0 +1,35 @@
+.card{
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    width: 300px;
+    max-height: 600px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+.price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.oldPrice {
+    text-decoration: line-through;
+    color: gray;
+}
+.discount{
+    color: rgb(233, 59, 126);
+}
+
+img{
+    width: 300px;
+    max-height: 400px;
+}
+button{
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(233, 59, 126);
+}
